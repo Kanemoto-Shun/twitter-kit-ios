@@ -21,9 +21,9 @@
 
 @interface TWTRWebViewController ()
 
-@property (nonatomic, readonly) UIWebView *webView;
+@property (nonatomic, readonly) WKWebView *webView;
 
-- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType;
+- (BOOL)webView:(WKWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(WKNavigationType)navigationType;
 
 @end
 
@@ -38,7 +38,7 @@
 - (void)setUp
 {
     [super setUp];
-    TWTRWebViewControllerShouldLoadCompletion shouldLoadCompletion = ^BOOL(UIViewController *controller, NSURLRequest *urlRequest, UIWebViewNavigationType navType) {
+    TWTRWebViewControllerShouldLoadCompletion shouldLoadCompletion = ^BOOL(UIViewController *controller, NSURLRequest *urlRequest, WKNavigationType navType) {
         return YES;
     };
     self.webVC = [[TWTRWebViewController alloc] init];

@@ -21,6 +21,7 @@
 
 #import <TwitterCore/TWTRSession.h>
 #import <UIKit/UIKit.h>
+#import <WebKit/WebKit.h>
 @class TWTRSessionStore;
 
 NS_ASSUME_NONNULL_BEGIN

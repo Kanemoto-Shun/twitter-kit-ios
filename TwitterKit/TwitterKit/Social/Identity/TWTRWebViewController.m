@@ -18,9 +18,9 @@
 #import "TWTRWebViewController.h"
 #import <TwitterCore/TWTRAuthenticationConstants.h>
 
-@interface TWTRWebViewController () <UIWebViewDelegate>
+@interface TWTRWebViewController () <WKNavigationDelegate>
 
-@property (nonatomic, strong) UIWebView *webView;
+@property (nonatomic, strong) WKWebView *webView;
 @property (nonatomic, assign) BOOL showCancelButton;
 @property (nonatomic, copy) TWTRWebViewControllerCancelCompletion cancelCompletion;
 
@@ -65,15 +65,15 @@
 
 - (void)loadView
 {
-    [self setWebView:[[UIWebView alloc] init]];
-    [[self webView] setScalesPageToFit:YES];
-    [[self webView] setDelegate:self];
+    [self setWebView:[[WKWebView alloc] init]];
+//    [[self webView] setScalesPageToFit:YES];
+    [[self webView] setNavigationDelegate:self];
     [self setView:[self webView]];
 }
 
 #pragma mark - UIWebview delegate
 
-- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
+- (BOOL)webView:(WKWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(WKNavigationType)navigationType
 {
     if (![self whitelistedDomain:request]) {
         // Open in Safari if request is not whitelisted
@@ -87,7 +87,7 @@
     return YES;
 }
 
-- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
+- (void)webView:(WKWebView *)webView didFailLoadWithError:(NSError *)error
 {
     if (self.errorHandler) {
         self.errorHandler(error);

@@ -365,6 +365,7 @@
 		6C58C4D71AE7112200D042C7 /* TWTROAuthSigning.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C58C4D21AE7102900D042C7 /* TWTROAuthSigning.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6C58C4D91AE7149400D042C7 /* TWTROAuthSigningTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C58C4D81AE7149400D042C7 /* TWTROAuthSigningTests.m */; };
 		6C9581CD1AE1EDBD002981F8 /* TWTRAPIClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9581CC1AE1EDBD002981F8 /* TWTRAPIClientTests.m */; };
+		70687266294B051100A4A5AB /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70687263294B051100A4A5AB /* WebKit.framework */; };
 		7B154E1519CB5F0C00B6B64C /* TWTRLogInButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B154E1119CB5DE500B6B64C /* TWTRLogInButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7B154E1619CB5F0C00B6B64C /* TWTRLogInButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B154E1219CB5DE500B6B64C /* TWTRLogInButton.m */; };
 		7B154E6D19D33A5300B6B64C /* TWTRBezierPaths.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B154E6B19D33A5300B6B64C /* TWTRBezierPaths.h */; };
@@ -1082,6 +1083,7 @@
 		6C58C4D81AE7149400D042C7 /* TWTROAuthSigningTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWTROAuthSigningTests.m; sourceTree = "<group>"; };
 		6C7FCB5A1AE59D5A008F41C9 /* TwitterSocialTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = TwitterSocialTests.m; sourceTree = "<group>"; };
 		6C9581CC1AE1EDBD002981F8 /* TWTRAPIClientTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = TWTRAPIClientTests.m; sourceTree = "<group>"; };
+		70687263294B051100A4A5AB /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/iOSSupport/System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		7B154E1119CB5DE500B6B64C /* TWTRLogInButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWTRLogInButton.h; sourceTree = "<group>"; };
 		7B154E1219CB5DE500B6B64C /* TWTRLogInButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWTRLogInButton.m; sourceTree = "<group>"; };
 		7B154E6B19D33A5300B6B64C /* TWTRBezierPaths.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWTRBezierPaths.h; sourceTree = "<group>"; };
@@ -1396,6 +1398,7 @@
 				DB2242681C3F2194008A6DC7 /* Foundation.framework in Frameworks */,
 				DB2242671C3F218F008A6DC7 /* UIKit.framework in Frameworks */,
 				DB2242661C3F2188008A6DC7 /* CoreGraphics.framework in Frameworks */,
+				70687266294B051100A4A5AB /* WebKit.framework in Frameworks */,
 				DB2242611C3F2181008A6DC7 /* CoreData.framework in Frameworks */,
 				DB22427F1C3F24A2008A6DC7 /* libTwitterCore.a in Frameworks */,
 				BFE839801ADF237A0035CBA1 /* libTwitterKit.a in Frameworks */,
@@ -1408,6 +1411,7 @@
 		208ACAB41FB2800900008F42 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				70687263294B051100A4A5AB /* WebKit.framework */,
 				AA3E099B20125EC600792255 /* MapKit.framework */,
 				AA3E099120119CA500792255 /* MobileCoreServices.framework */,
 				AAF0C9F020119BED0057F438 /* MapKit.framework */,
@@ -2978,6 +2982,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				ko,
 				ja,
@@ -3570,6 +3575,10 @@
 				BITCODE_GENERATION_MODE = bitcode;
 				CODE_SIGN_IDENTITY = "";
 				ENABLE_BITCODE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/System/iOSSupport/System/Library/Frameworks",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -3587,6 +3596,10 @@
 				BITCODE_GENERATION_MODE = bitcode;
 				CODE_SIGN_IDENTITY = "";
 				ENABLE_BITCODE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/System/iOSSupport/System/Library/Frameworks",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",

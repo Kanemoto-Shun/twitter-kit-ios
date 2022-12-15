@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -114,6 +114,7 @@
 		6CE57CC91AE068A300EA9C24 /* TWTRCoreOAuthSigning.h in Headers */ = {isa = PBXBuildFile; fileRef = 6CE57CC71AE068A300EA9C24 /* TWTRCoreOAuthSigning.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6CE57CCA1AE068A300EA9C24 /* TWTRCoreOAuthSigning.h in Headers */ = {isa = PBXBuildFile; fileRef = 6CE57CC71AE068A300EA9C24 /* TWTRCoreOAuthSigning.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6CE57CCB1AE068A300EA9C24 /* TWTRCoreOAuthSigning.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE57CC81AE068A300EA9C24 /* TWTRCoreOAuthSigning.m */; };
+		70687268294B051D00A4A5AB /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70687267294B051D00A4A5AB /* WebKit.framework */; platformFilter = maccatalyst; };
 		9D0AE5B01AC73F3B00884B45 /* TWTRUserSessionVerifier.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D0AE5AE1AC73F3B00884B45 /* TWTRUserSessionVerifier.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		9D0AE5B11AC73F3B00884B45 /* TWTRUserSessionVerifier.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D0AE5AE1AC73F3B00884B45 /* TWTRUserSessionVerifier.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		9D0AE5B21AC73F3B00884B45 /* TWTRUserSessionVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D0AE5AF1AC73F3B00884B45 /* TWTRUserSessionVerifier.m */; };
@@ -415,6 +416,7 @@
 		6C9DF6C01BFE4CFE00C705B5 /* TWTRGCOAuthTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TWTRGCOAuthTests.m; path = ThirdParty/TWTRGCOAuthTests.m; sourceTree = "<group>"; };
 		6CE57CC71AE068A300EA9C24 /* TWTRCoreOAuthSigning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWTRCoreOAuthSigning.h; sourceTree = "<group>"; };
 		6CE57CC81AE068A300EA9C24 /* TWTRCoreOAuthSigning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWTRCoreOAuthSigning.m; sourceTree = "<group>"; };
+		70687267294B051D00A4A5AB /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		9D0AE5AE1AC73F3B00884B45 /* TWTRUserSessionVerifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWTRUserSessionVerifier.h; sourceTree = "<group>"; };
 		9D0AE5AF1AC73F3B00884B45 /* TWTRUserSessionVerifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWTRUserSessionVerifier.m; sourceTree = "<group>"; };
 		9D0AE5B41AC7400500884B45 /* TWTRDateUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWTRDateUtil.h; sourceTree = "<group>"; };
@@ -586,6 +588,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70687268294B051D00A4A5AB /* WebKit.framework in Frameworks */,
 				9D30C5AE1ACE5F2400D0B1FA /* CoreData.framework in Frameworks */,
 				9DF52DA01ABB6B1F004345D0 /* CoreGraphics.framework in Frameworks */,
 				9DF52D6F1ABA95C3004345D0 /* Security.framework in Frameworks */,
@@ -923,6 +926,7 @@
 		9D5A926F1AAD13AD0039EFCC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				70687267294B051D00A4A5AB /* WebKit.framework */,
 				AAAE73BD1FB380BC005BEEAD /* libextobjc */,
 				3DC730951B55C02600A0699A /* Social.framework */,
 				3DC7308E1B55BFFE00A0699A /* Accounts.framework */,
@@ -1405,6 +1409,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				ja,
 				ko,
@@ -1753,7 +1758,11 @@
 				DEFINES_MODULE = YES;
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = "TwitterCore-Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "$(TWC_BUNDLE_IDENTIFIER)";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -1770,7 +1779,11 @@
 				DEFINES_MODULE = YES;
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = "TwitterCore-Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "$(TWC_BUNDLE_IDENTIFIER)";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
